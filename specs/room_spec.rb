@@ -8,6 +8,7 @@ class RoomTest < MiniTest::Test
   def setup
     @guest1 = Guest.new("Conor")
     @guest2 = Guest.new("Keith")
+    @guest3 = Guest.new("Cassia")
     @room = Room.new("one", 2, [])
     @room2 = Room.new("two", 1, [@guest1])
   end
@@ -42,6 +43,13 @@ class RoomTest < MiniTest::Test
     @room.add_guest(@guest2)
     @room.remove_guest(@guest2)
     assert_equal([], @room.guests)
-  end 
+  end
+
+  def test_can_empty_room
+    @room.add_guest(@guest2)
+    @room.add_guest(@guest3)
+    @room. empty_room
+    assert_equal([], @room.guests)
+  end
 
 end

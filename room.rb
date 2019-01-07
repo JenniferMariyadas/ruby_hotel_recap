@@ -20,5 +20,11 @@ def remove_guest(guest)
   @guests.delete(guest)
 end
 
+def empty_room
+  #@guests = []
+  while guest_count() > 0
+    @guests.pop
+  end
+end
 
 end
