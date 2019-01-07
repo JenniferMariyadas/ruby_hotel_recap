@@ -1,16 +1,16 @@
-require'minitest/autorun')
+require('minitest/autorun')
 require('minitest/rg')
 require_relative("../guest")
 
 class GuestTest < MiniTest::Test
 
-def setup
+ def setup
   @guest = Guest.new("Colin")
-end
+ end
 
-def test_guest_has_name
+ def test_guest_has_name
   assert_equal("Colin", @guest.name)
-end
+ end
 
 
 
